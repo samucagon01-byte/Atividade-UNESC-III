@@ -151,63 +151,43 @@
             }
         }
 
-        /* Menu Mobile Corrigido */
-        @media (max-width: 600px) {
-            .topo {
-                padding: 15px;
-                position: relative;
-                flex-direction: row;
-                justify-content: space-between;
-                height: auto;
-            }
+        /* Menu Mobile */
+    @media (max-width: 620px) {
+    .topo {
+        padding: 15px;
+        flex-direction: column; /* Mudei de row para column */
+        align-items: flex-start;
+        gap: 15px;
+    }
 
-            .logo {
-                padding: 0;
-                position: static;
-            }
+    .logo {
+        padding: 0;
+        position: absolute;
+        margin-top: 11%;
+        font-size: 40px;
+    }
 
-            .menu {
-                position: static;
-                flex-direction: row;
-                align-items: center;
-                background-color: transparent;
-                padding: 0;
-                width: auto;
-                gap: 10px;
-            }
+    .menu {
+        width: 100%; /* Ocupa toda a largura */
+        flex-direction: column; /* Menu vertical */
+        align-items: flex-end;
+        background-color: transparent;
+        padding: 0;
+        gap: 8px;
+    }
 
-            .menu a {
-                display: inline-block;
-                width: auto;
-                text-align: center;
-                margin: 0;
-                padding: 6px 10px;
-                background-color: transparent;
-                font-size: 0.9em;
-            }
+    .menu a {
+        display: block; /* Cada link ocupa toda a linha */
+        width: 20%;
+        text-align: right;
+        margin: 0;
 
-            .menu a:hover {
-                background-color: #333;
-            }
-        }
+        background-color: #333;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
 
-        /* Menu Mobile - Quando realmente precisa ser vertical */
-        @media (max-width: 400px) {
-            .topo {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .menu {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            
-            .menu a {
-                width: 100%;
-                text-align: left;
-                background-color: #333;
-            }
-        }
+    .menu a:hover {
+        background-color: #444;
+    }
+}
