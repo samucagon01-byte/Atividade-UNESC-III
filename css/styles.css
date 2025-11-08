@@ -1,0 +1,213 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* HEADER */
+        .topo {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* CONTEÚDO / GALERIA */
+        .conteudo {
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .galeria figure {
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Imagens */
+        .galeria img {
+            width: 100%; /* Alterado de 120% para 100% */
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            object-fit: contain; /* Alterado de cover para contain */
+            max-width: 100%;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        .galeria figcaption {
+            padding: 5px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* ===== RESPONSIVO CORRIGIDO ===== */
+
+        /* Desktop Large - 6 colunas */
+        @media (min-width: 1701px) {
+            .galeria {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        /* Desktop - 5 colunas */
+        @media (max-width: 1700px) and (min-width: 1501px) {
+            .galeria {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            .galeria figure:last-child {
+                 grid-column: span 2;
+    }
+        }
+
+        /* Tablet Large - 4 colunas */
+        @media (max-width: 1500px) and (min-width: 1201px) {
+            .galeria {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .galeria figure:nth-last-child(-n+2) {
+            grid-column: span 2;
+    }
+           
+        }
+
+        /* Tablet - 3 colunas */
+        @media (max-width: 1200px) and (min-width: 901px) {
+            .galeria {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .galeria figure:nth-last-child(-n+2) {
+            grid-column: span 1;
+           
+        }
+    }
+        /* Mobile Large - 2 colunas */
+        @media (max-width: 1000px) and (min-width: 681px) {
+            .galeria {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+         
+        }
+
+        /* Mobile Small - 1 coluna */
+        @media (max-width: 680px) {
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Menu Mobile Corrigido */
+        @media (max-width: 600px) {
+            .topo {
+                padding: 15px;
+                position: relative;
+                flex-direction: row;
+                justify-content: space-between;
+                height: auto;
+            }
+
+            .logo {
+                padding: 0;
+                position: static;
+            }
+
+            .menu {
+                position: static;
+                flex-direction: row;
+                align-items: center;
+                background-color: transparent;
+                padding: 0;
+                width: auto;
+                gap: 10px;
+            }
+
+            .menu a {
+                display: inline-block;
+                width: auto;
+                text-align: center;
+                margin: 0;
+                padding: 6px 10px;
+                background-color: transparent;
+                font-size: 0.9em;
+            }
+
+            .menu a:hover {
+                background-color: #333;
+            }
+        }
+
+        /* Menu Mobile - Quando realmente precisa ser vertical */
+        @media (max-width: 400px) {
+            .topo {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .menu a {
+                width: 100%;
+                text-align: left;
+                background-color: #333;
+            }
+        }
